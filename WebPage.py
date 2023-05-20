@@ -69,9 +69,9 @@ tab1.text_input(
     #   st.write("You entered: ", text_input)
     
 tab2.subheader("Preguntas deporte")
-placeholder = tab2.empty()
-tab2.button = placeholder.button('CALCULAR IQ DEPORTE', disable = False, key = 1)
-tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE')
+#placeholder = tab2.empty()
+#tab2.button = placeholder.button('CALCULAR IQ DEPORTE', disable = False, key = 1)
+tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', disabled = False, key = 1)
 
 if tab2.boton_calcular_IQ:
   IQ = np.random.randint(45, 155)
@@ -79,5 +79,6 @@ if tab2.boton_calcular_IQ:
   tab2.write(IQ)
   tab2.write()
   tab2.balloons()
-  placeholder.button('CALCULAR IQ DEPORTE', disabled=True, key='2')
+  tab2.boton_calcular_IQ = tab2.button(disable = True, key = 1)
+  #placeholder.button('CALCULAR IQ DEPORTE', disabled=True, key='2')
   #tab2.write(data)
