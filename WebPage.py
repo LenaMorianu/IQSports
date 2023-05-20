@@ -36,7 +36,7 @@ with col1:
 
 with col2:
     st.write('Title - Try this IQ TEST')
-    text_input1 = st.text_input(
+    text_input = st.text_input(
         "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
         label_visibility=st.session_state.visibility,
         disabled=st.session_state.disabled,
@@ -44,3 +44,5 @@ with col2:
     )
     #if text_input:
     #   st.write("You entered: ", text_input)
+data = np.random.randn(1, 45, 155)
+st.write(data)
