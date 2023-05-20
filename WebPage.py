@@ -72,9 +72,12 @@ tab2.subheader("Preguntas deporte")
 tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE')
 
 if tab2.boton_calcular_IQ:
+  placeholder = tab2.empty()
   IQ = np.random.randint(45, 155)
   tab2.write("IQ: ")
   tab2.write(IQ)
   tab2.write()
   tab2.balloons()
+  boton_calcular_IQ = placeholder.button('Button', disabled=True, key='1')
+  #placeholder.button('Button', disabled=True, key='2')
   #tab2.write(data)
