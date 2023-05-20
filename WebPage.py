@@ -75,4 +75,6 @@ if tab2.boton_calcular_IQ:
   IQ = np.random.randint(45, 155)
   tab2.write("IQ: ")
   tab2.write(IQ)
+  tab2.write()
+  tab2.baloons()
   #tab2.write(data)
