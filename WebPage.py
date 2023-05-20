@@ -50,5 +50,5 @@ tab1.text_input(
     #   st.write("You entered: ", text_input)
     
 tab2.subheader("Preguntas deporte")
-data = np.random.randn(1, 155)
+data = np.random.randint(45, 155)
 tab2.write(data)
