@@ -71,7 +71,7 @@ tab1.text_input(
 tab2.subheader("Preguntas deporte")
 #placeholder = tab2.empty()
 #tab2.button = placeholder.button('CALCULAR IQ DEPORTE', disable = False, key = 1)
-tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', disabled = False, key = 1, on_click = disable)
+tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', on_click=disable)
 
 if tab2.boton_calcular_IQ:
   IQ = np.random.randint(45, 155)
