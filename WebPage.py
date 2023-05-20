@@ -20,27 +20,27 @@ tab1.subheader("Preguntas generales")
 
 #col1, col2 = st.columns(2)
 #with col1:
-st.write('Select gender:')
-st.checkbox("Disable text input widget", key="disabled")
-st.radio(
+tab1.st.write('Select gender:')
+tab1.st.checkbox("Disable text input widget", key="disabled")
+tab1.st.radio(
         "Select age group 👇",
         key="visibility1",
         options=["20 - 29", "30 - 39", "40 - 49","50 - 59", "60 - 69", "70 - 79", "80 - 89", "> 90"],
     )
-st.radio(
+tab1.st.radio(
         "Select option 👇",
         key="visibility2",
         options=["Smoker", "Not-smoker"],
     )
-st.text_input(
+tab1.st.text_input(
         "Estimated number of hours practicing sport by month",
         "This is a placeholder",
         key="placeholder",
     )
 
 #with col2:
-st.write('Title - Try this IQ TEST')
-st.text_input(
+tab1.st.write('Title - Try this IQ TEST')
+tab1.st.text_input(
         "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
         #label_visibility=st.session_state.visibility,
         disabled=st.session_state.disabled,
