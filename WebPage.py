@@ -76,5 +76,5 @@ if tab2.boton_calcular_IQ:
   tab2.write("IQ: ")
   tab2.write(IQ)
   tab2.write()
-  tab2.baloons()
+  tab2.balloons()
   #tab2.write(data)
