@@ -44,13 +44,13 @@ with col2:
         disabled=st.session_state.disabled,
         placeholder=st.session_state.placeholder,
     )
-    text_input = st.text_input(
+    text_input2 = st.text_input(
         "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
         label_visibility=st.session_state.visibility,
         disabled=st.session_state.disabled,
         placeholder=st.session_state.placeholder,
     )        
-    text_input = st.text_input(
+    text_input3 = st.text_input(
         "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
         label_visibility=st.session_state.visibility,
         disabled=st.session_state.disabled,
