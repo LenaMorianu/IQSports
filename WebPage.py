@@ -20,8 +20,8 @@ tab1.subheader("Preguntas generales")
 
 #col1, col2 = st.columns(2)
 #with col1:
-tab1.st.write('Select gender:')
-tab1.st.checkbox("Disable text input widget", key="disabled")
+tab1.write('Select gender:')
+tab1.checkbox("Disable text input widget", key="disabled")
 tab1.st.radio(
         "Select age group 👇",
         key="visibility1",
