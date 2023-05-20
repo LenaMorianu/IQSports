@@ -26,7 +26,7 @@ st.write('Select gender:')
 st.checkbox("Disable text input widget", key="disabled")
 st.radio(
         "Select age group 👇",
-        key="visibility",
+        key="visibility1",
         options=["20 - 29", "30 - 39", "40 - 49","50 - 59", "60 - 69", "70 - 79", "80 - 89", "> 90"],
     )
 st.radio(
@@ -44,7 +44,7 @@ st.text_input(
 st.write('Title - Try this IQ TEST')
 st.text_input(
         "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
-        label_visibility=st.session_state.visibility,
+        #label_visibility=st.session_state.visibility,
         disabled=st.session_state.disabled,
         placeholder=st.session_state.placeholder,
     )
