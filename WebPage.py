@@ -13,3 +13,49 @@ st.write('Title - Try this IQ TEST')
   
 st.write('')
 st.write('*******************************************')
+
+col1, col2 = st.columns(2)
+with col1:
+    st.write('Select gender:')
+    st.checkbox("Disable text input widget", key="disabled")
+    st.radio(
+        "Select age group 👇",
+        key="visibility",
+        options=["20 - 29", "30 - 39", "40 - 49","50 - 59", "60 - 69", "70 - 79", "80 - 89", "> 90"]
+    )
+    st.radio(
+        "Select option 👇",
+        key="visibility",
+        options=["Smoker", "Not-smoker"]
+    )
+    st.text_input(
+        "Estimated number of hours practicing sport by month",
+        "This is a placeholder",
+        key="placeholder",
+    )
+
+with col2:
+          
+    st.write('Title - Try this IQ TEST')
+   
+    text_input = st.text_input(
+        "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
+        label_visibility=st.session_state.visibility,
+        disabled=st.session_state.disabled,
+        placeholder=st.session_state.placeholder,
+      
+        text_input = st.text_input(
+        "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
+        label_visibility=st.session_state.visibility,
+        disabled=st.session_state.disabled,
+        placeholder=st.session_state.placeholder,
+            
+        text_input = st.text_input(
+        "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
+        label_visibility=st.session_state.visibility,
+        disabled=st.session_state.disabled,
+        placeholder=st.session_state.placeholder,
+    )
+
+    if text_input:
+        st.write("You entered: ", text_input)
