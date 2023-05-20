@@ -73,5 +73,5 @@ tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE')
 
 if tab2.boton_calcular_IQ:
   IQ = np.random.randint(45, 155)
-  tab2.write("IQ: ", IQ)
+  tab2.write("IQ: " IQ)
   #tab2.write(data)
