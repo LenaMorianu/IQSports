@@ -10,17 +10,23 @@ st.set_page_config(page_title="IQ_Sports",
          
 st.write('Title - Try this IQ TEST')
 
-image = Image.open('Baloncesto1.jpeg')
-st.image(image, caption='Baloncesto')
+col1, col2, col3, col4 = st.columns(4)
 
-image2 = Image.open('Tennis1.jpeg')
-st.image(image2, caption='Tennis')
+with col1:
+  image = Image.open('Baloncesto1.jpeg')
+  st.image(image, caption='Baloncesto')
 
-image3 = Image.open('Padel1.jpeg')
-st.image(image3, caption='Padel')
+with col2:
+  image2 = Image.open('Tennis1.jpeg')
+  st.image(image2, caption='Tennis')
 
-image4 = Image.open('Carrera1.jpeg')
-st.image(image4, caption='Carrera')
+with col3:
+  image3 = Image.open('Padel1.jpeg')
+  st.image(image3, caption='Padel')
+
+with col4:
+  image4 = Image.open('Carrera1.jpeg')
+  st.image(image4, caption='Carrera')
 
 st.title('IQ TEST - SPORTS')
          
