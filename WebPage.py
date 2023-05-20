@@ -3,19 +3,27 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
-image = Image.open('Baloncesto1.jpeg')
-
-st.image(image, caption='Baloncesto')
-
 st.set_page_config(page_title="IQ_Sports",
                    #page_icon="🧊",
                    layout="wide",
                    initial_sidebar_state="expanded")
+         
+st.write('Title - Try this IQ TEST')
+
+image = Image.open('Baloncesto1.jpeg')
+st.image(image, caption='Baloncesto')
+
+image2 = Image.open('Tennis1.jpeg')
+st.image(image2, caption='Tennis')
+
+image3 = Image.open('Padel1.jpeg')
+st.image(image3, caption='Padel')
+
+image4 = Image.open('Carrera1.jpeg')
+st.image(image4, caption='Carrera')
 
 st.title('IQ TEST - SPORTS')
          
-st.write('Title - Try this IQ TEST')
-  
 st.write('')
 st.write('*******************************************')
 
