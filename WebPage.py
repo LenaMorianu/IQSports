@@ -25,7 +25,7 @@ with col1:
     )
     st.radio(
         "Select option 👇",
-        key="visibility",
+        key="visibility2",
         options=["Smoker", "Not-smoker"],
     )
     st.text_input(
