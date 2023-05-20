@@ -3,9 +3,9 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
-image = Image.open('sunrise.jpg')
+image = Image.open('Baloncesto1.jpeg')
 
-st.image(image, caption='Sunrise by the mountains')
+st.image(image, caption='Baloncesto')
 
 st.set_page_config(page_title="IQ_Sports",
                    #page_icon="🧊",
