@@ -14,6 +14,13 @@ st.write('Title - Try this IQ TEST')
 st.write('')
 st.write('*******************************************')
 
+
+tab1, tab2 = st.tabs(["Preguntas generales", "Preguntas específicas"])
+data = np.random.randn(1, 45, 155)
+
+tab1.subheader("Preguntas generales")
+tab1.line_chart(data)
+
 col1, col2 = st.columns(2)
 with col1:
     st.write('Select gender:')
@@ -36,7 +43,7 @@ with col1:
 
 with col2:
     st.write('Title - Try this IQ TEST')
-    text_input = st.text_input(
+    st.text_input(
         "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
         label_visibility=st.session_state.visibility,
         disabled=st.session_state.disabled,
@@ -44,5 +51,6 @@ with col2:
     )
     #if text_input:
     #   st.write("You entered: ", text_input)
-data = np.random.randn(1, 45, 155)
-st.write(data)
+    
+tab2.subheader("Preguntas deporte")
+tab2.write(data)
