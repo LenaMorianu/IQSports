@@ -69,5 +69,9 @@ tab1.text_input(
     #   st.write("You entered: ", text_input)
     
 tab2.subheader("Preguntas deporte")
-data = np.random.randint(45, 155)
-tab2.write(data)
+  boton_calcular_IQ = st.sidebar.button('CALCULAR IQ DEPORTE')
+
+  if boton_calcular_IQ:
+    IQ = np.random.randint(45, 155)
+    st.button("IQ: ", IQ)
+    #tab2.write(data)
