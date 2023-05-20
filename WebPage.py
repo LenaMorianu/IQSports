@@ -78,6 +78,5 @@ if tab2.boton_calcular_IQ:
   tab2.write(IQ)
   tab2.write()
   tab2.balloons()
-  boton_calcular_IQ = tab2.empty()
-  #placeholder.button('Button', disabled=True, key='2')
+  tab2.boton_calcular_IQ = tab2.button(disabled=True, key='2')
   #tab2.write(data)
