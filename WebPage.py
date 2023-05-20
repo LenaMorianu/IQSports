@@ -57,5 +57,5 @@ with col2:
         placeholder=st.session_state.placeholder,
     )
 
-    if text_input:
-        st.write("You entered: ", text_input)
+    /*if text_input:
+        st.write("You entered: ", text_input)*/
