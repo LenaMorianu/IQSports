@@ -21,12 +21,12 @@ with col1:
     st.radio(
         "Select age group 👇",
         key="visibility",
-        options=["20 - 29", "30 - 39", "40 - 49","50 - 59", "60 - 69", "70 - 79", "80 - 89", "> 90"]
+        options=["20 - 29", "30 - 39", "40 - 49","50 - 59", "60 - 69", "70 - 79", "80 - 89", "> 90"],
     )
     st.radio(
         "Select option 👇",
         key="visibility",
-        options=["Smoker", "Not-smoker"]
+        options=["Smoker", "Not-smoker"],
     )
     st.text_input(
         "Estimated number of hours practicing sport by month",
@@ -42,19 +42,19 @@ with col2:
         "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
         label_visibility=st.session_state.visibility,
         disabled=st.session_state.disabled,
-        placeholder=st.session_state.placeholder
+        placeholder=st.session_state.placeholder,
     )
     text_input = st.text_input(
         "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
         label_visibility=st.session_state.visibility,
         disabled=st.session_state.disabled,
-        placeholder=st.session_state.placeholder
+        placeholder=st.session_state.placeholder,
     )        
     text_input = st.text_input(
         "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
         label_visibility=st.session_state.visibility,
         disabled=st.session_state.disabled,
-        placeholder=st.session_state.placeholder
+        placeholder=st.session_state.placeholder,
     )
 
     #if text_input:
