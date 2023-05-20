@@ -73,8 +73,10 @@ tab2.subheader("Preguntas deporte")
 #tab2.button = placeholder.button('CALCULAR IQ DEPORTE', disable = False, key = 1)
 
 #disabled=tab2.session_state.get("disabled", True)
-tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', disabled=st.session_state.get("disabled", True))
 
+def disable():
+    tab2.session_state.disabled = True
+tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', on_click=disable, disabled=tab2.session_state.disabled)
 if tab2.boton_calcular_IQ:
   IQ = np.random.randint(45, 155)
   tab2.write("IQ: ")
