@@ -35,9 +35,7 @@ with col1:
     )
 
 with col2:
-          
     st.write('Title - Try this IQ TEST')
-   
     text_input1 = st.text_input(
         "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
         label_visibility=st.session_state.visibility,
