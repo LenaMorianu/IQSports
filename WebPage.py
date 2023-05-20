@@ -14,8 +14,6 @@ st.write('Title - Try this IQ TEST')
 st.write('')
 st.write('*******************************************')
 
-data = np.random.randn(1, 45, 155)
-
 tab1, tab2 = st.tabs(["Preguntas generales", "Preguntas específicas"])
 tab1.subheader("Preguntas generales")
 #tab1.line_chart(data)
@@ -52,4 +50,5 @@ st.text_input(
     #   st.write("You entered: ", text_input)
     
 tab2.subheader("Preguntas deporte")
+data = np.random.randn(1, 155)
 tab2.write(data)
