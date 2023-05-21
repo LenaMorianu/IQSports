@@ -14,29 +14,30 @@ col1, col2, col3, col4, col5 = st.columns(5)
 
 with col1:
   image = Image.open('Baloncesto1.jpeg')
-  st.image(image, caption='Baloncesto', width=250)
+  st.image(image, caption='Baloncesto', width=200)
 
 with col2:
   image2 = Image.open('Tennis1.jpeg')
-  st.image(image2, caption='Tennis', width=250)
+  st.image(image2, caption='Tennis', width=200)
 
 with col3:
   image3 = Image.open('Padel1.jpeg')
-  st.image(image3, caption='Padel', width=250)
-
+  st.image(image3, caption='Padel', width=200)
+  
 with col4:
   image4 = Image.open('Carrera1.jpeg')
-  st.image(image4, caption='Carrera', width=250)
+  st.image(image4, caption='Carrera', width=200)
   
 with col5:
   image5 = Image.open('Balonmano1.jpeg')
-  st.image(image5, caption='Balonmano', width=250)
+  st.image(image5, caption='Balonmano', width=200)
 
 st.write('')
 st.write('*******************************************')
 st.write('')
 
 tab1, tab2 = st.tabs(["Preguntas generales", "Preguntas específicas"])
+
 tab1.subheader("Preguntas generales")
 #tab1.line_chart(data)
 st.write('')
@@ -46,14 +47,15 @@ with col1:
 #tab1.write(:')
 #tab1.checkbox("Disable text input widget", key="disabled")
 
-  Nombre =tab1.text_input(
+  #Nombre=
+  tab1.text_input(
     "Nombre: 👇",
     #label_visibility=st.session_state.visibility,
     disabled=st.session_state.disabled,
     laceholder=st.session_state.placeholder,
     key="nombre",)
   
-  tab1.write(Nombre)
+  #tab1.write(Nombre)
   
   tab1.write('')  
   tab1.radio(
