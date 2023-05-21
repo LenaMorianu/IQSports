@@ -99,9 +99,9 @@ if 'iq_button' not in st.session_state:
     st.session_state.iq_button =  np.random.randint(45, 155)
     
 if 'iq_button':
+  IQ = st.session_state.iq_button
   tab2.metric(label="IQ", value=IQ)
-  tab2.write(st.session_state.iq_button)
-  tab2.write()
+  #tab2.write(st.session_state.iq_button)  tab2.write()
   tab2.write()
   tab2.balloons()
   #tab2.session_state.disabled = True
