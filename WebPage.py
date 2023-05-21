@@ -49,8 +49,8 @@ st.write('')
 Nombre=tab1.text_input(
   "Nombre: 👇",
   #label_visibility=st.session_state.visibility,
-  disabled=tab1.session_state.disabled,
-  placeholder=tab1.session_state.placeholder,)
+  #disabled=tab1.session_state.disabled,
+  #placeholder=tab1.session_state.placeholder,)
   
 tab1.write(Nombre)
   
@@ -93,6 +93,7 @@ if tab2.boton_calcular_IQ:
   #tab2.write(IQ)
   tab2.write()
   tab2.balloons()
+  tab2.session_state.disabled = True
   #tab2.button(key='iq_button', disabled=True)
   
 
