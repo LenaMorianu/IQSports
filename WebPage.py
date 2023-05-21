@@ -72,13 +72,14 @@ tab1.text_input(
 
 #with col2:
 tab1.write('Title - Try this IQ TEST')
-tab1.text_input(
+text_input = tab1.text_input(
     "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
     #label_visibility=st.session_state.visibility,
     disabled=st.session_state.disabled,
     placeholder=st.session_state.placeholder,)
-    #if text_input:
-    #   st.write("You entered: ", text_input)
+
+if text_input:
+  st.write("You entered: ", text_input)
     
 tab2.subheader("Preguntas deporte")
 
