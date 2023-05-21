@@ -8,7 +8,7 @@ st.set_page_config(page_title="IQ_Sports",
                    layout="wide",
                    initial_sidebar_state="expanded")
 
-st.markdown("<h1 style='text-align: center; color: light blue;'> IQ SPORTS TEST </h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: blue light;'> IQ SPORTS TEST </h1>", unsafe_allow_html=True)
 st.title(':blue[IQ SPORTS TEST]')
 
 col1, col2, col3, col4 = st.columns(4)
@@ -29,9 +29,6 @@ with col4:
   image4 = Image.open('Carrera1.jpeg')
   st.image(image4, caption='Carrera')
 
-st.markdown("<h1 style='text-align: center; color: blue;'> IQ SPORTS TEST </h1>", unsafe_allow_html=True)
-st.title(':blue[IQ SPORTS TEST]')
-         
 st.write('')
 st.write('*******************************************')
 
