@@ -69,16 +69,19 @@ tab1.text_input(
     #   st.write("You entered: ", text_input)
     
 tab2.subheader("Preguntas deporte")
-#placeholder = tab2.empty()
-#tab2.button = placeholder.button('CALCULAR IQ DEPORTE', disable = False, key = 1)
-
-#disabled=tab2.session_state.get("disabled", True)
 
 def disable():
     tab2.session_state.disabled = True
-tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', on_click=disable, disabled=tab2.session_state.disabled)
+
+def disable(button):
+    tab2.session_state["disabled"] = button
+    
+tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', on_click=disable, args=(True,))
+
 if tab2.boton_calcular_IQ:
   IQ = np.random.randint(45, 155)
+  tab2.metric(label="IQ", value=IQ)
+  tab2.write('')
   tab2.write("IQ: ")
   tab2.write(IQ)
   tab2.write()
