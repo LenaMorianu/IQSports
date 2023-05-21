@@ -7,8 +7,9 @@ st.set_page_config(page_title="IQ_Sports",
                    #page_icon="🧊",
                    layout="wide",
                    initial_sidebar_state="expanded")
-         
-st.write('Title - Try this IQ TEST')
+
+st.markdown("<h1 style='text-align: center; color: light blue;'> IQ SPORTS TEST </h1>", unsafe_allow_html=True)
+st.title(':blue[IQ SPORTS TEST]')
 
 col1, col2, col3, col4 = st.columns(4)
 
