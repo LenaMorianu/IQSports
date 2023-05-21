@@ -43,10 +43,6 @@ tab1, tab2 = st.tabs(["Preguntas generales", "Preguntas específicas"])
 tab1.subheader("Preguntas generales")
 tab1.write('')
 
-if "visibility1" not in st.session_state:
-    st.session_state.visibility1 = "visible"
-    st.session_state.disabled = False
-    
 #col1, col2 = st.columns(2)
 #with col1:
 #tab1.write(:')
