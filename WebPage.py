@@ -74,11 +74,11 @@ def disable():
     st.session_state.disabled = True
 
 def disable(button):
-    st.session_state["disabled"] = button
+    tab2.session_state["disabled"] = button
     
-#tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', on_click=disable, args=(True,))
+tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', on_click=disable, args=(True,))
 tab2.write()
-tab2.boton_calcular_IQ_2 = tab2.button('CALCULAR IQ DEPORTE2', key='iq_button2', disabled=st.session_state.get("disabled", True))
+tab2.boton_calcular_IQ_2 = tab2.button('CALCULAR IQ DEPORTE2', key='iq_button2', disabled=tab2.session_state.get("disabled", True))
 
 #if tab2.boton_calcular_IQ:
  # IQ = np.random.randint(45, 155)
