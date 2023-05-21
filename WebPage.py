@@ -71,12 +71,14 @@ tab1.text_input(
 tab2.subheader("Preguntas deporte")
 
 def disable():
-    tab2.session_state.disabled = True
+    st.session_state.disabled = True
 
 def disable(button):
-    tab2.session_state["disabled"] = button
+    st.session_state["disabled"] = button
     
 tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', on_click=disable, args=(True,))
+tab2.write()
+tab2.boton_calcular_IQ_2 = tab2.button('CALCULAR IQ DEPORTE2', key='iq_button2', disabled=st.session_state.get("disabled", True))
 
 if tab2.boton_calcular_IQ:
   IQ = np.random.randint(45, 155)
@@ -86,6 +88,13 @@ if tab2.boton_calcular_IQ:
   tab2.write(IQ)
   tab2.write()
   tab2.balloons()
-  #tab2.boton_calcular_IQ = tab2.button(disable = True, key = 1)
-  #placeholder.button('CALCULAR IQ DEPORTE', disabled=True, key='2')
-  #tab2.write(data)
+  
+if tab2.boton_calcular_IQ_2:
+  IQ2 = np.random.randint(45, 155)
+  tab2.metric(label="IQ", value=IQ2)
+  tab2.write('')
+  tab2.write("IQ2: ")
+  tab2.write(IQ2)
+  tab2.write()
+  tab2.balloons()
+
