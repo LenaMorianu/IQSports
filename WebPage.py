@@ -9,6 +9,8 @@ st.set_page_config(page_title="IQ_Sports",
                    initial_sidebar_state="expanded")
 
 st.markdown("<h1 style='text-align: center; color: blue;'> IQ SPORTS TEST </h1>", unsafe_allow_html=True)
+st.write('')
+st.write('')
 
 col1, col2, col3, col4, col5 = st.columns(5)
 
@@ -33,8 +35,8 @@ with col5:
   st.image(image5, caption='Balonmano', width=200)
 
 st.write('')
-st.write('*******************************************')
-st.write('')
+#st.write('*******************************************')
+#st.write('')
 
 tab1, tab2 = st.tabs(["Preguntas generales", "Preguntas específicas"])
 
@@ -75,31 +77,31 @@ tab1.text_input(
     key="placeholder",)
 
 #with col2:
-tab1.write('Title - Try this IQ TEST')
-text_input = tab1.text_input(
+
+tab2.subheader("Preguntas deporte")
+Respuesta1 = tab2.text_input(
     "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
     #label_visibility=st.session_state.visibility,
     #disabled=st.session_state.disabled,
     #placeholder=st.session_state.placeholder,
 )
 
-if text_input:
-  st.write("You entered: ", text_input)
+if Respuesta1:
+  st.write("You entered: ", Respuesta1)
+ 
+def disable():
+    st.session_state.disabled = True
     
-tab2.subheader("Preguntas deporte")
-
-tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
+tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', on_click=disable)
 tab2.write()
 
 if tab2.boton_calcular_IQ:
   IQ = np.random.randint(45, 155)
   tab2.metric(label="IQ", value=IQ)
-  tab2.write('')
-  #tab2.write("IQ: ")
-  #tab2.write(IQ)
+  tab2.write()
   tab2.write()
   tab2.balloons()
-  tab2.session_state.disabled = True
+  #tab2.session_state.disabled = True
   #tab2.button(key='iq_button', disabled=True)
   
 
