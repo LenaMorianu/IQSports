@@ -47,15 +47,14 @@ with col1:
 #tab1.write(:')
 #tab1.checkbox("Disable text input widget", key="disabled")
 
-  #Nombre=
-  tab1.text_input(
+  Nombre=tab1.text_input(
     "Nombre: 👇",
     #label_visibility=st.session_state.visibility,
-    disabled=tab1.session_state.disabled,
-    laceholder=tab1.session_state.placeholder,
+    disabled=st.session_state.disabled,
+    placeholder=st.session_state.placeholder,
     key="nombre",)
   
-  #tab1.write(Nombre)
+  tab1.write(Nombre)
   
   tab1.write('')  
   tab1.radio(
