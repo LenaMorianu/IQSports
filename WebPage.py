@@ -49,8 +49,8 @@ st.write('')
 Nombre=tab1.text_input(
   "Nombre: 👇",
   #label_visibility=st.session_state.visibility,
-  #disabled=st.session_state.disabled,
-  placeholder=st.session_state.placeholder,)
+  disabled=tab1.session_state.disabled,
+  placeholder=tab1.session_state.placeholder,)
   
 tab1.write(Nombre)
   
