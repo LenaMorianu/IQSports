@@ -8,10 +8,9 @@ st.set_page_config(page_title="IQ_Sports",
                    layout="wide",
                    initial_sidebar_state="expanded")
 
-st.markdown("<h1 style='text-align: center; color: blue light;'> IQ SPORTS TEST </h1>", unsafe_allow_html=True)
-st.title(':blue[IQ SPORTS TEST]')
+st.markdown("<h1 style='text-align: center; color: blue;'> IQ SPORTS TEST </h1>", unsafe_allow_html=True)
 
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4, col5 = st.columns(5)
 
 with col1:
   image = Image.open('Baloncesto1.jpeg')
@@ -28,42 +27,57 @@ with col3:
 with col4:
   image4 = Image.open('Carrera1.jpeg')
   st.image(image4, caption='Carrera')
+  
+with col5:
+  image5 = Image.open('Balonmano1.jpeg')
+  st.image(image5, caption='Balonmano')
 
 st.write('')
 st.write('*******************************************')
+st.write('')
 
 tab1, tab2 = st.tabs(["Preguntas generales", "Preguntas específicas"])
 tab1.subheader("Preguntas generales")
 #tab1.line_chart(data)
+st.write('')
 
-#col1, col2 = st.columns(2)
-#with col1:
-tab1.write('Select gender:')
-tab1.checkbox("Disable text input widget", key="disabled")
-tab1.radio(
-        "Select age group 👇",
-        key="visibility1",
-        options=["20 - 29", "30 - 39", "40 - 49","50 - 59", "60 - 69", "70 - 79", "80 - 89", "> 90"],
-    )
-tab1.radio(
-        "Select option 👇",
-        key="visibility2",
-        options=["Smoker", "Not-smoker"],
-    )
-tab1.text_input(
-        "Estimated number of hours practicing sport by month",
-        "This is a placeholder",
-        key="placeholder",
-    )
+col1, col2 = st.columns(2)
+with col1:
+#tab1.write(:')
+#tab1.checkbox("Disable text input widget", key="disabled")
 
-#with col2:
-tab1.write('Title - Try this IQ TEST')
-tab1.text_input(
-        "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
-        #label_visibility=st.session_state.visibility,
-        disabled=st.session_state.disabled,
-        placeholder=st.session_state.placeholder,
-    )
+  Nombre =tab1.text_input(
+    "Nombre: 👇",
+    #label_visibility=st.session_state.visibility,
+    disabled=st.session_state.disabled,
+    laceholder=st.session_state.placeholder,
+    key="nombre",)
+  
+  tab1.write(Nombre)
+  
+  tab1.write('')  
+  tab1.radio(
+    "Edad 👇",
+    key="visibility1",
+    options=["20 - 29", "30 - 39", "40 - 49","50 - 59", "60 - 69", "70 - 79", "80 - 89", "> 90"],)
+
+  tab1.radio(
+    "Select option 👇",
+    key="visibility2",
+    options=["Smoker", "Not-smoker"],)
+
+  tab1.text_input(
+    "Estimated number of hours practicing sport by month",
+    "This is a placeholder",
+    key="placeholder",)
+
+with col2:
+  tab1.write('Title - Try this IQ TEST')
+  tab1.text_input(
+    "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
+    #label_visibility=st.session_state.visibility,
+    disabled=st.session_state.disabled,
+    placeholder=st.session_state.placeholder,)
     #if text_input:
     #   st.write("You entered: ", text_input)
     
