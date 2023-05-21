@@ -42,39 +42,38 @@ tab1.subheader("Preguntas generales")
 #tab1.line_chart(data)
 st.write('')
 
-col1, col2 = st.columns(2)
-with col1:
+#col1, col2 = st.columns(2)
+#with col1:
 #tab1.write(:')
 #tab1.checkbox("Disable text input widget", key="disabled")
 
-  Nombre=tab1.text_input(
-    "Nombre: 👇",
-    #label_visibility=st.session_state.visibility,
-    disabled=st.session_state.disabled,
-    placeholder=st.session_state.placeholder,
-    key="nombre",)
+Nombre=tab1.text_input(
+  "Nombre: 👇",
+  #label_visibility=st.session_state.visibility,
+  disabled=st.session_state.disabled,
+  placeholder=st.session_state.placeholder,)
   
-  tab1.write(Nombre)
+tab1.write(Nombre)
   
-  tab1.write('')  
-  tab1.radio(
-    "Edad 👇",
-    key="visibility1",
-    options=["20 - 29", "30 - 39", "40 - 49","50 - 59", "60 - 69", "70 - 79", "80 - 89", "> 90"],)
+tab1.write('')  
+tab1.radio(
+  "Edad 👇",
+  key="visibility1",
+  options=["20 - 29", "30 - 39", "40 - 49","50 - 59", "60 - 69", "70 - 79", "80 - 89", "> 90"],)
 
-  tab1.radio(
-    "Select option 👇",
-    key="visibility2",
-    options=["Smoker", "Not-smoker"],)
+tab1.radio(
+  "Select option 👇",
+  key="visibility2",
+  options=["Smoker", "Not-smoker"],)
 
-  tab1.text_input(
+tab1.text_input(
     "Estimated number of hours practicing sport by month",
     "This is a placeholder",
     key="placeholder",)
 
-with col2:
-  tab1.write('Title - Try this IQ TEST')
-  tab1.text_input(
+#with col2:
+tab1.write('Title - Try this IQ TEST')
+tab1.text_input(
     "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
     #label_visibility=st.session_state.visibility,
     disabled=st.session_state.disabled,
@@ -82,7 +81,7 @@ with col2:
     #if text_input:
     #   st.write("You entered: ", text_input)
     
-tab2.subheader("Preguntas deporte")
+ tab2.subheader("Preguntas deporte")
 
 tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
 tab2.write()
