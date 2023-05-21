@@ -14,23 +14,23 @@ col1, col2, col3, col4, col5 = st.columns(5)
 
 with col1:
   image = Image.open('Baloncesto1.jpeg')
-  st.image(image, caption='Baloncesto')
+  st.image(image, caption='Baloncesto', width=25)
 
 with col2:
   image2 = Image.open('Tennis1.jpeg')
-  st.image(image2, caption='Tennis')
+  st.image(image2, caption='Tennis', width=25)
 
 with col3:
   image3 = Image.open('Padel1.jpeg')
-  st.image(image3, caption='Padel')
+  st.image(image3, caption='Padel', width=25)
 
 with col4:
   image4 = Image.open('Carrera1.jpeg')
-  st.image(image4, caption='Carrera')
+  st.image(image4, caption='Carrera', width=25)
   
 with col5:
   image5 = Image.open('Balonmano1.jpeg')
-  st.image(image5, caption='Balonmano')
+  st.image(image5, caption='Balonmano', width=25)
 
 st.write('')
 st.write('*******************************************')
