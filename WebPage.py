@@ -92,10 +92,10 @@ if Respuesta1:
 def disable():
     st.session_state.disabled = True
 
-if boton_calcular_IQ not in st.session_state:
+if tab2.boton_calcular_IQ not in st.session_state:
     st.session_state.boton_calcular_IQ =  np.random.randint(45, 155)
 
-boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', on_click=disable)
+tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', on_click=disable)
 st.write()
 
 if "iq_button" in st.session_state:
