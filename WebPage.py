@@ -53,8 +53,7 @@ Nombre=tab1.text_input(
   #placeholder=tab1.session_state.placeholder,)
   
 tab1.write(Nombre)
-  
-tab1.write('')  
+#tab1.write('')
 tab1.radio(
   "Edad 👇",
   key="visibility1",
