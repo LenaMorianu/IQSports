@@ -52,8 +52,8 @@ Nombre=tab1.text_input(
   #disabled=tab1.session_state.disabled,
   #placeholder=tab1.session_state.placeholder,)
   
-tab1.write(Nombre)
-#tab1.write('')
+st.write(Nombre)
+st.write('')
 tab1.radio(
   "Edad 👇",
   key="visibility1",
