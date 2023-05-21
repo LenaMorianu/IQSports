@@ -41,6 +41,10 @@ tab1, tab2 = st.tabs(["Preguntas generales", "Preguntas específicas"])
 tab1.subheader("Preguntas generales")
 st.write('')
 
+if "visibility" not in st.session_state:
+    st.session_state.visibility = "visible"
+    st.session_state.disabled = False
+    
 #col1, col2 = st.columns(2)
 #with col1:
 #tab1.write(:')
@@ -75,8 +79,9 @@ tab1.write('Title - Try this IQ TEST')
 text_input = tab1.text_input(
     "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
     #label_visibility=st.session_state.visibility,
-    disabled=st.session_state.disabled,
-    placeholder=st.session_state.placeholder,)
+    #disabled=st.session_state.disabled,
+    #placeholder=st.session_state.placeholder,
+)
 
 if text_input:
   st.write("You entered: ", text_input)
