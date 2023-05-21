@@ -91,17 +91,20 @@ if Respuesta1:
  
 def disable():
     st.session_state.disabled = True
-    
-tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', on_click=disable)
-tab2.write()
+
+if boton_calcular_IQ not in st.session_state:
+    st.session_state.boton_calcular_IQ =  np.random.randint(45, 155)
+
+boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', on_click=disable)
+st.write()
 
 if "iq_button" in st.session_state:
     st.session_state.visibility = "visible"
     st.session_state.disabled = True
     
 if tab2.boton_calcular_IQ:
-  IQ = np.random.randint(45, 155)
   tab2.metric(label="IQ", value=IQ)
+  st.write(st.session_state.boton_calcular_IQ)
   tab2.write()
   tab2.write()
   tab2.balloons()
