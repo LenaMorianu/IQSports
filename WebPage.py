@@ -70,10 +70,10 @@ tab1.text_input(
     
 tab2.subheader("Preguntas deporte")
 
-#def disable():
- #   st.session_state.disabled = True
+def disable():
+  st.session_state.disabled = True
 
-tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', disabled=False)
+tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', on-click=disable , disabled=False)
 tab2.write()
 
 if tab2.boton_calcular_IQ:
@@ -84,6 +84,6 @@ if tab2.boton_calcular_IQ:
   tab2.write(IQ)
   tab2.write()
   tab2.balloons()
-  tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', disabled=True)
+  #tab2.button(key='iq_button', disabled=True)
   
 
