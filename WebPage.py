@@ -90,7 +90,7 @@ def disable(button):
     st.session_state.button = disable
 
  def disabled(iq_button):
-    st.session_state.disabled = iq_button    
+  st.session_state.disabled = iq_button    
   
 boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', disabled = st.session_state.get("disabled", True))
 tab2.write()
