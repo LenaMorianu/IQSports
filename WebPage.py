@@ -28,7 +28,8 @@ with col4:
   image4 = Image.open('Carrera1.jpeg')
   st.image(image4, caption='Carrera')
 
-st.title('IQ TEST - SPORTS')
+st.markdown("<h1 style='text-align: center; color: blue;'> IQ SPORTS TEST </h1>", unsafe_allow_html=True)
+st.title(':blue[IQ SPORTS TEST]')
          
 st.write('')
 st.write('*******************************************')
