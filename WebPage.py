@@ -84,15 +84,9 @@ Respuesta1 = tab2.text_input(
 
 if Respuesta1:
   st.write("You entered: ", Respuesta1)
- 
-def disable():
-    st.session_state.disabled = True
 
-tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button', on_click=disable)
+tab2.boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
 tab2.write()
-    
-if 'IQ' not in st.session_state:
-    st.session_state.IQ =  np.random.randint(45, 155)
     
 if 'iq_button':
   IQ = st.session_state.IQ
@@ -102,6 +96,9 @@ if 'iq_button':
   tab2.balloons()
   #tab2.session_state.disabled = True
   #tab2.button(key='iq_button', disabled=True)
+  
+if 'IQ' not in st.session_state:
+    st.session_state.IQ =  np.random.randint(45, 155)
   
 
 
