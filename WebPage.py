@@ -94,8 +94,8 @@ if 'IQ' not in st.session_state:
 if 'iq_button':
   IQ = st.session_state.IQ
   #tab2.metric(label="IQ", value=IQ)
-  tab2.write('IQ:' , IQ)
-  tab2.write()
+  tab2.write('IQ:')
+  tab2.write(IQ)
   tab2.balloons()
   #tab2.session_state.disabled = True
   #tab2.button(key='iq_button', disabled=True)
