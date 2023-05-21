@@ -39,7 +39,6 @@ st.write('')
 tab1, tab2 = st.tabs(["Preguntas generales", "Preguntas específicas"])
 
 tab1.subheader("Preguntas generales")
-#tab1.line_chart(data)
 st.write('')
 
 #col1, col2 = st.columns(2)
@@ -50,7 +49,7 @@ st.write('')
 Nombre=tab1.text_input(
   "Nombre: 👇",
   #label_visibility=st.session_state.visibility,
-  disabled=st.session_state.disabled,
+  #disabled=st.session_state.disabled,
   placeholder=st.session_state.placeholder,)
   
 tab1.write(Nombre)
