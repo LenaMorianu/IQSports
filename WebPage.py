@@ -140,7 +140,7 @@ tab2.write(df2)
 
 
 def write_csv_func(data1, data2, data3, data4, data5, data6, data7):    
-    with open('https://raw.githubusercontent.com/LenaMorianu/IQSports/main/Data.csv', 'a+') as f:    #Append & read mode
+    with open('Data.csv', 'a+') as f:    #Append & read mode
         f.write(f"{data1},{data2}, {data3}, {data4}, {data5}, {data6}, {data7}\n")
 
 boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
