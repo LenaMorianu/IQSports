@@ -43,7 +43,7 @@ url = 'https://raw.githubusercontent.com/LenaMorianu/IQSports/main/Data.xlsx'
 def load_data(url):
   data = pd.read_csv(url, encoding='ISO-8859-1')
   #data.drop(['Unnamed: 0'], axis=1, inplace=True)
-    return data
+  return data
 
 df = load_data(url)
 
