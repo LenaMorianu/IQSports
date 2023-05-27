@@ -152,7 +152,7 @@ if 'IQ' not in st.session_state:
 if boton_calcular_IQ:
   IQ = st.session_state.IQ
   #tab2.metric(label="IQ", value=IQ)
-  tab2.write_csv_func(Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3)
+  write_csv_func(Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3)
   tab2.write('IQ:')
   tab2.write(IQ)
   tab2.balloons()
