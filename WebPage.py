@@ -130,7 +130,10 @@ Respuesta3 = tab2.text_input(
 if Respuesta3:
   st.write("Respuesta : ", Respuesta3)   
     
-  
+df2 = pd.DataFrame(Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3)
+df.append(df2)
+
+df.to_csv('Data.csv', mode='a', index=False, header=False, sep=',')
     
 boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
 tab2.write()
