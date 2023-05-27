@@ -47,7 +47,7 @@ def load_data(url):
   return data
 
 df = load_data(url1)
-
+st.write(df)
 
 tab1, tab2 = st.tabs(["Preguntas generales", "Preguntas específicas"])
 
