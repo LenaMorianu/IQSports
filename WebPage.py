@@ -40,7 +40,7 @@ st.write('')
 
 #url0 = 'https://github.com/LenaMorianu/IQSports/blob/56bafa1b74865608024adf061bd7223059a4dea4/Data.csv'
 url1 = 'https://raw.githubusercontent.com/LenaMorianu/IQSports/main/Data.csv'
-@st.cache
+#@st.cache
 def load_data(url):
   data = pd.read_csv(url, encoding='ISO-8859-1')
   #data.drop(['Unnamed: 0'], axis=1, inplace=True)
