@@ -134,7 +134,7 @@ df2 = pd.DataFrame([Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, R
 
 tab2.write(df2)
 #df.append(df2, ignore_index=True)
-df.to_csv('Data.csv', mode='a', index=False, header=False, sep=',')
+df2.to_csv('Data.csv', mode='a', index=False, header=False, sep=',')
     
 boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
 tab2.write()
