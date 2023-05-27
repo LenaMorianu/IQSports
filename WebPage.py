@@ -38,7 +38,18 @@ st.write('')
 #st.write('*******************************************')
 #st.write('')
 
+url = 'https://raw.githubusercontent.com/LenaMorianu/IQSports/main/Data.xlsx'
+@st.cache
+def load_data(url):
+  data = pd.read_csv(url, encoding='ISO-8859-1')
+  #data.drop(['Unnamed: 0'], axis=1, inplace=True)
+    return data
+
+df = load_data(url)
+
+
 tab1, tab2 = st.tabs(["Preguntas generales", "Preguntas específicas"])
+
 
 tab1.subheader("Preguntas generales")
 tab1.write('')
@@ -48,31 +59,43 @@ tab1.write('')
 #tab1.write(:')
 #tab1.checkbox("Disable text input widget", key="disabled")
 
-Nombre=tab1.text_input(
+#Column NOMBRE
+Nombre = tab1.text_input(
   "Nombre: 👇",
+  key = nombre,
   #label_visibility=st.session_state.visibility,
   #disabled=tab1.session_state.disabled,
   #placeholder=tab1.session_state.placeholder,
 )
-  
+
+ 
 tab1.write(Nombre)
 tab1.write('')
-tab1.radio(
+
+#Column EDAD
+Edad = tab1.radio(
   "Edad 👇",
-  key="visibility1",
+  key="edad",
   options=["20 - 29", "30 - 39", "40 - 49","50 - 59", "60 - 69", "70 - 79", "80 - 89", "> 90"],)
 
-tab1.radio(
-  "Select option 👇",
-  key="visibility2",
-  options=["Smoker", "Not-smoker"],)
+#Column DEPORTE_FAVORITO
+Deporte_favorito = tab1.text_input(
+  "Deporte favorito: 👇",
+  key = deporte_favorito,
+  #label_visibility=st.session_state.visibility,
+  #disabled=tab1.session_state.disabled,
+  #placeholder=tab1.session_state.placeholder,
+)
 
-tab1.text_input(
-    "Estimated number of hours practicing sport by month",
-    "This is a placeholder",
-    key="placeholder",)
+#Column HORAS_DEPORTE
+Horas_deporte = tab1.radio(
+  "Horas de deporte realizadas a la semana: 👇",
+  key= horas_deporte,
+  options=["<1", " 1 - 3", " 3 - 5" , "5 - 7", ">7"],
+)
 
 #with col2:
+
 
 tab2.subheader("Preguntas deporte")
 Respuesta1 = tab2.text_input(
@@ -83,8 +106,31 @@ Respuesta1 = tab2.text_input(
 )
 
 if Respuesta1:
-  st.write("You entered: ", Respuesta1)   
+  st.write("Respuesta : ", Respuesta1)   
   
+Respuesta2 = tab2.text_input(
+    "¿Quien ganó la última Copa del Rey de baloncesto? 👇",
+    #label_visibility=st.session_state.visibility,
+    #disabled=st.session_state.disabled,
+    #placeholder=st.session_state.placeholder,
+)
+
+if Respuesta2:
+  st.write("Respuesta : ", Respuesta2)   
+  
+
+Respuesta3 = tab2.text_input(
+    "¿Qué equipo femenino ganó el último Campeonato del Mundo de balonmano? 👇",
+    #label_visibility=st.session_state.visibility,
+    #disabled=st.session_state.disabled,
+    #placeholder=st.session_state.placeholder,
+)
+
+if Respuesta3:
+  st.write("Respuesta : ", Respuesta3)   
+    
+  
+    
 boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
 tab2.write()
  
