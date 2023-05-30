@@ -5,7 +5,7 @@ from PIL import Image
 
 st.set_page_config(page_title="IQ_Sports",
                    #page_icon="🧊",
-                   layout="wide",
+                   #layout="wide",
                    initial_sidebar_state="expanded")
 
 st.markdown("<h1 style='text-align: center; color: blue;'> IQ SPORTS TEST </h1>", unsafe_allow_html=True)
@@ -55,48 +55,46 @@ tab1, tab2 = st.tabs(["Preguntas generales", "Preguntas específicas"])
 tab1.subheader("Preguntas generales")
 tab1.write('')
 
-tab1.col1, tab1.col2 = tab1.columns(2)
-with tab1.col1:
+col1, col2 = tab1.columns(2)
+with col1:
   tab1.write(" --------- ")
   tab1.checkbox("Disable text input widget", key="disabled")
 
 #Column NOMBRE
-Nombre = tab1.text_input(
-  "Nombre: 👇",
-  #key = nombre,
-  #label_visibility=st.session_state.visibility,
-  #disabled=tab1.session_state.disabled,
-  #placeholder=tab1.session_state.placeholder,
-)
+  Nombre = tab1.text_input(
+    "Nombre: 👇",
+    #key = nombre,
+    #label_visibility=st.session_state.visibility,
+    #disabled=tab1.session_state.disabled,
+    #placeholder=tab1.session_state.placeholder,
+    )
 
              
-with tab1.col1:             
+with col2:             
   tab1.write(Nombre)
   tab1.write('')
 
 #Column EDAD
-Edad = tab1.radio(
-  "Edad 👇",
-  #key="edad",
-  options=["20 - 29", "30 - 39", "40 - 49","50 - 59", "60 - 69", "70 - 79", "80 - 89", "> 90"],)
+  Edad = tab1.radio(
+    "Edad 👇",
+    #key="edad",
+    options=["20 - 29", "30 - 39", "40 - 49","50 - 59", "60 - 69", "70 - 79", "80 - 89", "> 90"],)
 
 #Column DEPORTE_FAVORITO
-Deporte_favorito = tab1.text_input(
-  "Deporte favorito: 👇",
-  #key = deporte_favorito,
-  #label_visibility=st.session_state.visibility,
-  #disabled=tab1.session_state.disabled,
-  #placeholder=tab1.session_state.placeholder,
-)
+  Deporte_favorito = tab1.text_input(
+    "Deporte favorito: 👇",
+    #key = deporte_favorito,
+    #label_visibility=st.session_state.visibility,
+    #disabled=tab1.session_state.disabled,
+    #placeholder=tab1.session_state.placeholder,
+  )
 
 #Column HORAS_DEPORTE
-Horas_deporte = tab1.radio(
-  "Horas de deporte realizadas a la semana: 👇",
-  #key= horas_deporte,
-  options=["<1", " 1 - 3", " 3 - 5" , "5 - 7", ">7"],
-)
-
-#with col2:
+  Horas_deporte = tab1.radio(
+    "Horas de deporte realizadas a la semana: 👇",
+    #key= horas_deporte,
+    options=["<1", " 1 - 3", " 3 - 5" , "5 - 7", ">7"],
+  )
 
 
 tab2.subheader("Preguntas deporte")
