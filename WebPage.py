@@ -57,7 +57,7 @@ tab1.write('')
 
 tab1.col1, tab1.col2 = tab1.columns(2)
 with tab1.col1:
-  tab1.write(:')
+  tab1.write(" --------- ")
   tab1.checkbox("Disable text input widget", key="disabled")
 
 #Column NOMBRE
