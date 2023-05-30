@@ -146,7 +146,8 @@ def write_csv_func(data1, data2, data3, data4, data5, data6, data7):
 @st.cache
 def convert_df(df):
     return df.to_csv(mode='a', header = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3"]).encode('utf-8')
-
+  
+@st.cache
 csv_file = convert_df(df2)
 
      
