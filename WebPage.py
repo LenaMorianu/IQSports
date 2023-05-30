@@ -159,6 +159,15 @@ def datafr_creator():
 
 df100 = datafr_creator()  
   
+
+@st.cache_data()
+def load_data2(sheets_url):
+    csv_url = sheets_url.replace("/edit#gid=", "/export?format=csv&gid=")
+    return pd.read_csv(csv_url)
+
+df11 = load_data(st.secrets["public_gsheets_url"])  
+
+st.write(df11)
   
   
 boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
