@@ -145,12 +145,9 @@ def write_csv_func(data1, data2, data3, data4, data5, data6, data7):
  
 @st.cache
 def convert_df(df):
-    return df.to_csv(mode='a', header = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3"]).encode('utf-8')
+  return df.to_csv(mode='a', header = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3"]).encode('utf-8')
   
-st.cache_data
-csv_file = convert_df(df2)
-
-     
+    
 boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
 tab2.write()
  
@@ -164,6 +161,7 @@ if boton_calcular_IQ:
   tab2.write('IQ:')
   tab2.write(IQ)
   tab2.balloons()
+  csv_file = convert_df(df2)
   st.download_button(
     label="Download data as CSV",
     data=csv_file,
