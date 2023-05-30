@@ -168,7 +168,7 @@ def load_data2(sheets_url):
 df11 = load_data(st.secrets["public_gsheets_url"])  
 
 # Print results.
-for row in df.itertuples():
+for row in df11.itertuples():
   st.write(row)
   
   
