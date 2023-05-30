@@ -151,7 +151,7 @@ def convert_df(df):
 df100 = pd.DataFrame()
   
 @st.cache_data()
-def datafr_creator(data):
+def datafr_creator():
   df = df.append(data, ignore_index=True)
   return df
 
