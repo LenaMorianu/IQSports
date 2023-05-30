@@ -40,7 +40,7 @@ st.write('')
 
 #url0 = 'https://github.com/LenaMorianu/IQSports/blob/56bafa1b74865608024adf061bd7223059a4dea4/Data.csv'
 url1 = 'https://raw.githubusercontent.com/LenaMorianu/IQSports/main/Data.csv'
-#@st.cache
+@st.cache
 def load_data(url):
   data = pd.read_csv(url, encoding='ISO-8859-1')
   #data.drop(['Unnamed: 0'], axis=1, inplace=True)
@@ -134,7 +134,6 @@ if Respuesta3:
 df2 = pd.DataFrame([Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3]) #, columns = columnas)
 
 tab2.write(df2)
-#df.append(df2, ignore_index=True)
 #df2.to_csv('https://raw.githubusercontent.com/LenaMorianu/IQSports/main/Data.csv', mode='w', index=False, header=False, sep=';', encoding='ISO-8859-1')
 
 
@@ -142,7 +141,15 @@ def write_csv_func(data1, data2, data3, data4, data5, data6, data7):
     with open('Data.csv', 'a+') as f:    #Append & read mode
         f.write(f"{data1},{data2}, {data3}, {data4}, {data5}, {data6}, {data7}\n")
         st.write("DONE")
+ 
+@st.cache
+def convert_df(df):
+    return df.to_csv().encode('utf-8')
 
+csv_file = convert_df(df2)
+
+      
+        
 boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
 tab2.write()
  
@@ -156,6 +163,13 @@ if boton_calcular_IQ:
   tab2.write('IQ:')
   tab2.write(IQ)
   tab2.balloons()
+  st.download_button(
+    label="Download data as CSV",
+    data=csv_file,
+    file_name='Prueba.csv',
+    mime='text/csv',
+  )   
+    
   #tab2.session_state.disabled = True
   #tab2.button(key='iq_button', disabled=True)
 
