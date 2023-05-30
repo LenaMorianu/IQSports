@@ -167,7 +167,9 @@ def load_data2(sheets_url):
 
 df11 = load_data(st.secrets["public_gsheets_url"])  
 
-st.write(df11)
+# Print results.
+for row in df.itertuples():
+  st.write(row)
   
   
 boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
