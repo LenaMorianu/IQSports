@@ -131,7 +131,7 @@ if Respuesta3:
     
 columnas = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3"]
 
-df2 = pd.DataFrame([[], [], [], [], [], [], []] , columns = columnas)
+#df2 = pd.DataFrame([[], [], [], [], [], [], []] , columns = columnas)
 
 df3 = df.append([[Nombre], [Edad], [Deporte_favorito], [Horas_deporte], [Respuesta1], [Respuesta2], [Respuesta3]])
 tab2.write(df3)
@@ -147,7 +147,7 @@ def write_csv_func(data1, data2, data3, data4, data5, data6, data7):
 def convert_df(df):
     return df.to_csv(mode='w').encode('utf-8')
 
-csv_file = convert_df(df2)
+csv_file = convert_df(df3)
 
      
 boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
