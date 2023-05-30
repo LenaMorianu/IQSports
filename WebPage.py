@@ -55,10 +55,10 @@ tab1, tab2 = st.tabs(["Preguntas generales", "Preguntas específicas"])
 tab1.subheader("Preguntas generales")
 tab1.write('')
 
-#col1, col2 = st.columns(2)
-#with col1:
-#tab1.write(:')
-#tab1.checkbox("Disable text input widget", key="disabled")
+tab1.col1, tab1.col2 = tab1.columns(2)
+with tab1.col1:
+  tab1.write(:')
+  tab1.checkbox("Disable text input widget", key="disabled")
 
 #Column NOMBRE
 Nombre = tab1.text_input(
@@ -69,9 +69,10 @@ Nombre = tab1.text_input(
   #placeholder=tab1.session_state.placeholder,
 )
 
- 
-tab1.write(Nombre)
-tab1.write('')
+             
+with tab1.col1:             
+  tab1.write(Nombre)
+  tab1.write('')
 
 #Column EDAD
 Edad = tab1.radio(
