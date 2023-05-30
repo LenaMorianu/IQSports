@@ -149,15 +149,15 @@ def convert_df(df):
   return df.to_csv(mode='a', header = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3"]).encode('utf-8')
   
 
-df100 = pd.DataFrame()
+#df100 = pd.DataFrame()
   
-@st.cache_data()
-def datafr_creator():
-  df100 = df100.append(data, ignore_index=True)
-  return df
+#@st.cache_data()
+#def datafr_creator():
+#  df100 = df100.append(data, ignore_index=True)
+#  return df
 
 
-df100 = datafr_creator()  
+#df100 = datafr_creator()  
   
 
 @st.cache_data()
