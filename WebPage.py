@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-import gspread
-gc = gspread.service_account()
+#import gspread
+#gc = gspread.service_account()
 
 
 st.set_page_config(page_title="IQ_Sports",
