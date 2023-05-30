@@ -1,9 +1,10 @@
+pip install gspread
 import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+gc = gspread.service_account()
 
 
 st.set_page_config(page_title="IQ_Sports",
@@ -152,29 +153,19 @@ def convert_df(df):
   return df.to_csv(mode='a', header = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3"]).encode('utf-8')
   
 
-#df100 = pd.DataFrame()
-  
-#@st.cache_data()
-#def datafr_creator():
-#  df100 = df100.append(data, ignore_index=True)
-#  return df
-
-
-#df100 = datafr_creator()  
-  
-
 @st.cache_data()
 def load_data2(sheets_url):
     csv_url = sheets_url.replace("/edit#gid=", "/export?format=csv&gid=")
     return pd.read_csv(csv_url)
 
-#df11 = load_data(st.secrets["public_gsheets_url"])  
 
-# Print results.
-#for row in df11.itertuples():
- # st.write(row)
+sh = gc.open_by_key('1FRXkZmD0hbzxmRONVrY3fkzKMC4FzdYix8t6bfFXugU')
+worksheet = sh.sheet1
+dataframe = pd.DataFrame(worksheet.get_all_records())
+#worksheet.update([dataframe.columns.values.tolist()] + dataframe.values.tolist())
+#worksheet.update(dataframe.values.tolist([[1],[2],[3],[4],[5],[6],[7]))
   
-  
+st.write(dataframe) 
 boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
 tab2.write()
  
@@ -194,19 +185,9 @@ if boton_calcular_IQ:
     data=csv_file,
     file_name='Prueba.csv',
     mime='text/csv',
-  )   
-    
-  #tab2.session_state.disabled = True
-  #tab2.button(key='iq_button', disabled=True)
-
-scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-
-creds = ServiceAccountCredentials.from_json_keyfile_name('testingdb-b6d4d-d0a2646c069a.json', scope)
-client = gspread.authorize(creds)
- 
-sh = client.open('TestSheet').worksheet('names')  
-row = [name,adr,age,symptoms,gender,email]
-sh.append_row(row)
+  )
+  
+  
   
 
 
