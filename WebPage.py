@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 st.set_page_config(page_title="IQ_Sports",
                    #page_icon="🧊",
@@ -165,11 +167,11 @@ def load_data2(sheets_url):
     csv_url = sheets_url.replace("/edit#gid=", "/export?format=csv&gid=")
     return pd.read_csv(csv_url)
 
-df11 = load_data(st.secrets["public_gsheets_url"])  
+#df11 = load_data(st.secrets["public_gsheets_url"])  
 
 # Print results.
-for row in df11.itertuples():
-  st.write(row)
+#for row in df11.itertuples():
+ # st.write(row)
   
   
 boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
@@ -196,6 +198,14 @@ if boton_calcular_IQ:
   #tab2.session_state.disabled = True
   #tab2.button(key='iq_button', disabled=True)
 
+scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+
+creds = ServiceAccountCredentials.from_json_keyfile_name('testingdb-b6d4d-d0a2646c069a.json', scope)
+client = gspread.authorize(creds)
+ 
+sh = client.open('TestSheet').worksheet('names')  
+row = [name,adr,age,symptoms,gender,email]
+sh.append_row(row)
   
 
 
