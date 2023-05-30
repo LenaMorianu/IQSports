@@ -158,13 +158,15 @@ def load_data2(sheets_url):
     return pd.read_csv(csv_url)
 
 
-sh = gc.open_by_key('1FRXkZmD0hbzxmRONVrY3fkzKMC4FzdYix8t6bfFXugU')
-worksheet = sh.sheet1
-dataframe = pd.DataFrame(worksheet.get_all_records())
+#sh = gc.open_by_key('1FRXkZmD0hbzxmRONVrY3fkzKMC4FzdYix8t6bfFXugU')
+#worksheet = sh.sheet1
+#dataframe = pd.DataFrame(worksheet.get_all_records())
 #worksheet.update([dataframe.columns.values.tolist()] + dataframe.values.tolist())
 #worksheet.update(dataframe.values.tolist([[1],[2],[3],[4],[5],[6],[7]))
   
-st.write(dataframe) 
+#st.write(dataframe) 
+
+
 boton_calcular_IQ = tab2.button('CALCULAR IQ DEPORTE', key='iq_button')
 tab2.write()
  
