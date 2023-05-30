@@ -152,11 +152,11 @@ df100 = pd.DataFrame()
   
 @st.cache_data()
 def datafr_creator():
-  df = df.append(data, ignore_index=True)
+  df100 = df100.append(data, ignore_index=True)
   return df
 
 
-df = datafr_creator()  
+df100 = datafr_creator()  
   
   
   
