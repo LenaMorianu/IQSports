@@ -5,6 +5,7 @@ from PIL import Image
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
+
 st.set_page_config(page_title="IQ_Sports",
                    #page_icon="🧊",
                    layout="wide",
