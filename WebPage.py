@@ -131,7 +131,7 @@ if Respuesta3:
     
 columnas = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3"]
 
-df2 = pd.DataFrame([Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3]) , columns = columnas)
+df2 = pd.DataFrame([Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3] , columns = columnas)
 
 pd.df2.append([Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3])
 tab2.write(df2)
