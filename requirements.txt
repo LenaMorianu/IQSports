@@ -1,7 +1,7 @@
 
 streamlit
 pandas
-matplotlib
+matplotlib.pyplot
 numpy
 google-api-python-client 
 google-auth-httplib2 
