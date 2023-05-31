@@ -210,17 +210,16 @@ if boton_calcular_IQ:
   #tab2.metric(label="IQ", value=IQ)
   #write_csv_func(Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3)
   tab2.write('IQ:')
+  tab2.markdown(<h1 style='text-align: center; color: blue;'> IQ </h1>, unsafe_allow_html=True)
+  tab2.write()
   tab2.write(IQ)
   tab2.balloons()
   csv_file = convert_df(df2)
   st.download_button(
     label="Download data as CSV",
     data=csv_file,
-    file_name='Prueba.csv',
+    file_name='Datos.csv',
     mime='text/csv',
   )
+  )
   
-  
-  
-
-
