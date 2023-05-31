@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from PIL import Image
-import altair as alt
+#import altair as alt
 #from googleapiclient.discovery import build
 #from google.oauth2 import service_account
 #from google.oauth2 import service_account
@@ -227,9 +227,9 @@ if boton_calcular_IQ:
   
   )
   
-arr = np.random.normal(1, 1, size=100)
-fig, ax = plt.subplots()
-ax.hist(arr, bins=30)
+#arr = np.random.normal(1, 1, size=100)
+#fig, ax = plt.subplots()
+#ax.hist(arr, bins=30)
 
-st.pyplot(fig)
+#st.pyplot(fig)
   
