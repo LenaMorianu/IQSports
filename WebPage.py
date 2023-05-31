@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
+import altair as alt
 #from googleapiclient.discovery import build
 #from google.oauth2 import service_account
 #from google.oauth2 import service_account
@@ -205,12 +206,14 @@ tab2.write()
 if 'IQ' not in st.session_state:
     st.session_state.IQ =  np.random.randint(45, 155)
 
+
+    
 if boton_calcular_IQ:
   IQ = st.session_state.IQ
   #tab2.metric(label="IQ", value=IQ)
   #write_csv_func(Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3)
   tab2.write('IQ:')
-  tab2.markdown(<h1 style='text-align: center; color: blue;'> IQ </h1>, unsafe_allow_html=True)
+  #tab2.markdown("<h1 style='text-align: center; color: blue;'> IQ </h1>", unsafe_allow_html=True)
   tab2.write()
   tab2.write(IQ)
   tab2.balloons()
@@ -220,6 +223,18 @@ if boton_calcular_IQ:
     data=csv_file,
     file_name='Datos.csv',
     mime='text/csv',
+  
   )
-  )
+  
+
+df = pd.DataFrame(
+  np.random.randn(155, 3),
+  columns=['a', 'b', 'c'])
+
+c = alt.Chart(df).mark_circle().encode(
+    x='a', y='b', size='c', color='c', tooltip=['a', 'b', 'c'])
+
+st.write(c)
+  
+  
   
