@@ -228,7 +228,7 @@ if boton_calcular_IQ:
   
 chart_data = pd.DataFrame(
     np.random.randint(45, 155),
-    #columns=["a", "b", "c"]
+    columns=["a", "b", "c"]
 )
 
 st.bar_chart(chart_data)
