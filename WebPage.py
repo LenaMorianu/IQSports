@@ -2,27 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-import gsheetsdb
 from google.oauth2 import service_account
+from gsheetsdb import connect
 
-# Create a connection object.
-credentials = service_account.Credentials.from_service_account_info(
-    st.secrets["service_account"],
-    scopes=[
-        "https://www.googleapis.com/auth/spreadsheets","https://www.googleapis.com/auth/drive"
-    ],
-)
-conn = connect(credentials=credentials)
-client=gspread.authorize(credentials)
-
-sheet_id = '1FRXkZmD0hbzxmRONVrY3fkzKMC4FzdYix8t6bfFXugU'
-csv_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
-database_df = pd.read_csv(csv_url, on_bad_lines='skip')
-
-st.write(database_df)
-
-#import gspread
-#gc = gspread.service_account()
 
 
 st.set_page_config(page_title="IQ_Sports",
@@ -33,6 +15,34 @@ st.set_page_config(page_title="IQ_Sports",
 st.markdown("<h1 style='text-align: center; color: blue;'> IQ SPORTS TEST </h1>", unsafe_allow_html=True)
 st.write('')
 st.write('')
+
+
+# Create a connection object.
+credentials = service_account.Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"],
+    scopes=[
+        "https://www.googleapis.com/auth/spreadsheets",
+    ],
+)
+conn = connect(credentials=credentials)
+
+
+@st.cache_data(ttl=600)
+def run_query(query):
+    rows = conn.execute(query, headers=1)
+    rows = rows.fetchall()
+    return rows
+
+sheet_url = st.secrets["private_gsheets_url"]
+rows = run_query(f'SELECT * FROM "{sheet_url}"')
+
+# Print results.
+for row in rows:
+    st.write(f"{row.name} has a :{row.pet}:")
+
+
+st.write(database_df)
+
 
 col1, col2, col3, col4, col5 = st.columns(5)
 
