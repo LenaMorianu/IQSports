@@ -226,15 +226,10 @@ if boton_calcular_IQ:
   
   )
   
+chart_data = pd.DataFrame(
+    np.random.randint(45, 155),
+    #columns=["a", "b", "c"]
+)
 
-df = pd.DataFrame(
-  np.random.randn(45, 155),
-  columns=['a', 'b'])
-
-c = alt.Chart(df).mark_circle().encode(
-    x='a', y='b', size='c', tooltip=['a', 'b'])
-
-st.write(c)
-  
-  
+st.bar_chart(chart_data)
   
