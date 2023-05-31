@@ -133,6 +133,8 @@ Horas_deporte = tab1.radio(
 
 
 tab2.subheader("Preguntas deporte")
+
+st.write()
 Respuesta1 = tab2.text_input(
     "¿Quien ganó el torneo de tenis Roland Garros en 2022? 👇",
     #label_visibility=st.session_state.visibility,
@@ -142,9 +144,10 @@ Respuesta1 = tab2.text_input(
 
 if Respuesta1:
   st.write("Respuesta : ", Respuesta1)   
-  
+
+  st.write()  
 Respuesta2 = tab2.text_input(
-    "¿Quien ganó la última Copa del Rey de baloncesto? 👇",
+    "¿Qué país gano más medallas en los últimos juegos Olímpicos? 👇",
     #label_visibility=st.session_state.visibility,
     #disabled=st.session_state.disabled,
     #placeholder=st.session_state.placeholder,
@@ -153,8 +156,9 @@ Respuesta2 = tab2.text_input(
 if Respuesta2:
   st.write("Respuesta : ", Respuesta2)   
   
+st.write()
 Respuesta3 = tab2.text_input(
-    "¿Qué equipo femenino ganó el último Campeonato del Mundo de balonmano? 👇",
+    "¿Qué equipo femenino ganó el último Campeonato de Mundo de balonmano? 👇",
     #label_visibility=st.session_state.visibility,
     #disabled=st.session_state.disabled,
     #placeholder=st.session_state.placeholder,
