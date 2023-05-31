@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-import gspread
+import gsheetsdb
 from google.oauth2 import service_account
 
 # Create a connection object.
