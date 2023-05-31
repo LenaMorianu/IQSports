@@ -183,7 +183,7 @@ def write_csv_func(data1, data2, data3, data4, data5, data6, data7):
  
 @st.cache
 def convert_df(df):
-  return df.to_csv(mode='a', header = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3"]).encode('utf-8')
+  return df.to_csv(mode='a', header = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3", "IQ"]).encode('utf-8')
   
 
 @st.cache_data()
@@ -218,7 +218,7 @@ if boton_calcular_IQ:
   tab2.write()
   tab2.write(IQ)
   tab2.balloons()
-  columnas = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3", "IQ"]
+  columnas = ["Nombre", "Edad", "Deporte favorito", "Horas deporte", "Pregunta1", "Pregunta2", "Pregunta3", "IQ"]
   data1 = [[Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3, IQ]]
   df2 = pd.DataFrame(data1, columns = columnas)
   st.write(df2)
