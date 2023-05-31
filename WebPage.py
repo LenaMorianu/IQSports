@@ -18,11 +18,6 @@ st.markdown("<h1 style='text-align: center; color: blue;'> IQ SPORTS TEST </h1>"
 st.write('')
 st.write('')
 
-
-with st.sidebar:
-    with st.echo(): "Try this magnific IQ Sports Test"
-
-
 # Create a connection object.
 
 #scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
