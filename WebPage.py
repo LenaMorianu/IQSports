@@ -2,13 +2,13 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
+from googleapiclient.discovery import build
 from google.oauth2 import service_account
-from gsheetsdb import connect
-
+from google.oauth2 import service_account
+from gsheetsdb import connect # Create a connection object.
 
 
 st.set_page_config(page_title="IQ_Sports",
-                   #page_icon="🧊",
                    layout="wide",
                    initial_sidebar_state = "expanded")
 
@@ -17,14 +17,21 @@ st.write('')
 st.write('')
 
 
+
 # Create a connection object.
-credentials = service_account.Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"],
-    scopes=[
-        "https://www.googleapis.com/auth/spreadsheets",
-    ],
-)
-conn = connect(credentials=credentials)
+
+#scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+#        "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+
+creds = None
+creds = service_account.Credentials.from_service_account_info( st.secrets["gcp_service_account"], scopes="https://www.googleapis.com/auth/spreadsheets" )
+conn = connect(credentials=creds)
+
+
+# The ID spreadsheet.
+SAMPLE_SPREADSHEET_ID=st.secrets["SAMPLE_SPREADSHEET_ID"]["SAMPLE_SPREADSHEET_ID"]
+service = build('sheets','v4',credentials=creds)
+
 
 
 @st.cache_data(ttl=600)
@@ -38,10 +45,10 @@ rows = run_query(f'SELECT * FROM "{sheet_url}"')
 
 # Print results.
 for row in rows:
-    st.write(f"{row.name} has a :{row.pet}:")
+    st.write(row)
 
 
-st.write(database_df)
+#st.write(database_df)
 
 
 col1, col2, col3, col4, col5 = st.columns(5)
