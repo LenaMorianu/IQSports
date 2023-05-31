@@ -166,10 +166,10 @@ if Respuesta3:
   st.write("Respuesta : ", Respuesta3)   
  
 
-columnas = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3"]
-data1 = [[Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3]]
-df2 = pd.DataFrame(data1, columns = columnas)
-st.write(df2)
+#columnas = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3", "IQ"]
+#data1 = [[Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3, IQ]]
+#df2 = pd.DataFrame(data1, columns = columnas)
+#st.write(df2)
 
 #df3 = st.df.append([[Nombre], [Edad], [Deporte_favorito], [Horas_deporte], [Respuesta1], [Respuesta2], [Respuesta3]])
 #tab2.write(df3)
@@ -219,6 +219,11 @@ if boton_calcular_IQ:
   tab2.write(IQ)
   tab2.balloons()
   csv_file = convert_df(df2)
+  columnas = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3", "IQ"]
+  data1 = [[Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3, IQ]]
+  df2 = pd.DataFrame(data1, columns = columnas)
+  st.write(df2)
+ 
   st.download_button(
     label="Download data as CSV",
     data=csv_file,
