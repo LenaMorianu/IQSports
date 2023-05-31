@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-from googleapiclient.discovery import build
-from google.oauth2 import service_account
-from google.oauth2 import service_account
-from gsheetsdb import connect # Create a connection object.
+#from googleapiclient.discovery import build
+#from google.oauth2 import service_account
+#from google.oauth2 import service_account
+#from gsheetsdb import connect # Create a connection object.
 
 
 st.set_page_config(page_title="IQ_Sports",
@@ -23,32 +23,30 @@ st.write('')
 #scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 #        "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 
-creds = None
-creds = service_account.Credentials.from_service_account_info( st.secrets["gcp_service_account"], scopes="https://www.googleapis.com/auth/spreadsheets" )
-conn = connect(credentials=creds)
+#creds = None
+#creds = service_account.Credentials.from_service_account_info( st.secrets["gcp_service_account"], scopes="https://www.googleapis.com/auth/spreadsheets" )
+#conn = connect(credentials=creds)
 
 
 # The ID spreadsheet.
-SAMPLE_SPREADSHEET_ID=st.secrets["SAMPLE_SPREADSHEET_ID"]["SAMPLE_SPREADSHEET_ID"]
-service = build('sheets','v4',credentials=creds)
+#SAMPLE_SPREADSHEET_ID=st.secrets["SAMPLE_SPREADSHEET_ID"]["SAMPLE_SPREADSHEET_ID"]
+#service = build('sheets','v4',credentials=creds)
 
 
 
-@st.cache_data(ttl=600)
-def run_query(query):
-    rows = conn.execute(query, headers=1)
-    rows = rows.fetchall()
-    return rows
+#@st.cache_data(ttl=600)
+#def run_query(query):
+#    rows = conn.execute(query, headers=1)
+#    rows = rows.fetchall()
+#    return rows
 
-sheet_url = st.secrets["public_gsheets_url"]
-rows = run_query(f'SELECT * FROM "{sheet_url}"')
+#sheet_url = st.secrets["public_gsheets_url"]
+#rows = run_query(f'SELECT * FROM "{sheet_url}"')
 
 # Print results.
-for row in rows:
-    st.write(row)
+#for row in rows:
+#    st.write(row)
 
-
-#st.write(database_df)
 
 
 col1, col2, col3, col4, col5 = st.columns(5)
@@ -74,20 +72,18 @@ with col5:
   st.image(image5, caption='Balonmano', width=200)
 
 st.write('')
-#st.write('*******************************************')
-#st.write('')
 
 #url0 = 'https://github.com/LenaMorianu/IQSports/blob/56bafa1b74865608024adf061bd7223059a4dea4/Data.csv'
-url1 = 'https://raw.githubusercontent.com/LenaMorianu/IQSports/main/Data.csv'
+#url1 = 'https://raw.githubusercontent.com/LenaMorianu/IQSports/main/Data.csv'
 
 #@st.cache
-def load_data(url):
-  data = pd.read_csv(url, encoding='ISO-8859-1')
+#def load_data(url):
+#  data = pd.read_csv(url, encoding='ISO-8859-1')
   #data.drop(['Unnamed: 0'], axis=1, inplace=True)
-  return data
+#  return data
 
-df = load_data(url1)
-st.write(df)
+#df = load_data(url1)
+#st.write(df)
 
 tab1, tab2 = st.tabs(["Preguntas generales", "Preguntas específicas"])
 
@@ -157,7 +153,6 @@ Respuesta2 = tab2.text_input(
 if Respuesta2:
   st.write("Respuesta : ", Respuesta2)   
   
-
 Respuesta3 = tab2.text_input(
     "¿Qué equipo femenino ganó el último Campeonato del Mundo de balonmano? 👇",
     #label_visibility=st.session_state.visibility,
@@ -167,7 +162,8 @@ Respuesta3 = tab2.text_input(
 
 if Respuesta3:
   st.write("Respuesta : ", Respuesta3)   
-    
+ 
+
 columnas = ["Nombre", "Edad", "Deporte_favorito", "Horas_deporte", "Pregunta1", "Pregunta2", "Pregunta3"]
 data1 = [[Nombre, Edad, Deporte_favorito, Horas_deporte, Respuesta1, Respuesta2, Respuesta3]]
 df2 = pd.DataFrame(data1, columns = columnas)
