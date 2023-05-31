@@ -3,3 +3,4 @@ streamlit
 pandas
 gspread==5.9.0
 google-auth
+gsheetsdb==0.1.13.1
